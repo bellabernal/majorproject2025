@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neck Tilt Exercise Assistant</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Neck Tilts to relieve pain</h1>
+    
+    <div class="container">
+        <video id="webcam"></video>
+        <canvas id="output_canvas"></canvas>
+    </div>
+    
+    <div class="controls">
+        <p class="status" id="status">Loading...</p>
+        <p class="instructions" id="instructions">Time for some simple neck tilt exercises.</p>
+        
+        <div id="exercise-controls" class="hidden">
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div class="stats">
+                <span id="reps">Reps: 0</span>
+                <span id="hold-time">Hold: 0s</span>
+                <span id="tilt-angle">Angle: 0°</span>
+            </div>
+        </div>
+        
+        <button id="start-button">Start Camera</button>
+        <button id="exercise-button" class="hidden">Start Exercise</button>
+    </div>
 
+    <script src="script.js"></script>
+</body>
+</html>
